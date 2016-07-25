@@ -34,6 +34,7 @@ public class TwitterProfile extends TwitterObject implements Serializable {
 	private final String description;
 	private final String location;
 	private final Date createdDate;
+	private String email;
 	private String language;
 	private int statusesCount;
 	private int friendsCount;
@@ -470,6 +471,13 @@ public class TwitterProfile extends TwitterObject implements Serializable {
 		return true;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	@Override
 	public int hashCode() {
@@ -482,6 +490,7 @@ public class TwitterProfile extends TwitterObject implements Serializable {
 		result = 31 * result + (location != null ? location.hashCode() : 0);
 		result = 31 * result + (createdDate != null ? createdDate.hashCode() : 0);
 		result = 31 * result + (language != null ? language.hashCode() : 0);
+		result = 31 * result + (email != null ? email.hashCode() : 0);
 		result = 31 * result + statusesCount;
 		result = 31 * result + friendsCount;
 		result = 31 * result + followersCount;

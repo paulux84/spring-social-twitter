@@ -48,7 +48,7 @@ public class TwitterAdapter implements ApiAdapter<Twitter> {
 
 	public UserProfile fetchUserProfile(Twitter twitter) {
 		TwitterProfile profile = twitter.userOperations().getUserProfile();
-		return new UserProfileBuilder().setName(profile.getName()).setUsername(profile.getScreenName()).build();
+		return new UserProfileBuilder().setName(profile.getName()).setUsername(profile.getScreenName()).setEmail(profile.getEmail()).build();
 	}
 	
 	public void updateStatus(Twitter twitter, String message) {
